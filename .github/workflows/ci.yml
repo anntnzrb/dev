@@ -1,0 +1,24 @@
+name: "Nix CI"
+
+on:
+  workflow_dispatch: # manual triggering
+  pull_request:
+  push:
+    branches: ["main"]
+
+jobs:
+  ci:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        # FIXME: darwin won't pass chech. https://github.com/cachix/devenv/issues/1455
+        #os: [ubuntu-latest, macos-latest]
+        os: [ubuntu-latest]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: DeterminateSystems/nix-installer-action@v14
+
+      - name: Run CI
+        # impure is needed (for now) because of devenv
+        run: nix flake check --impure .
