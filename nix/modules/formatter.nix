@@ -13,6 +13,7 @@
         nixfmt.enable = true;
         actionlint.enable = true;
         prettier.enable = true;
+        just.enable = true;
 
         deadnix = {
           enable = true;
