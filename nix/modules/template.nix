@@ -1,6 +1,8 @@
-{ inputs
-, ...
-}: {
+{
+  inputs,
+  ...
+}:
+{
   flake.templates = {
     default = inputs.self.templates.dev;
 

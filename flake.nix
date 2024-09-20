@@ -41,7 +41,8 @@
     };
   };
 
-  outputs = inputs:
+  outputs =
+    inputs:
     inputs.flake-parts.lib.mkFlake { inherit inputs; } {
       systems = import inputs.systems;
       imports =
@@ -49,8 +50,7 @@
           modulesDir = ./nix/modules;
         in
         with builtins;
-        map (mod: "${modulesDir}/${mod}")
-          (attrNames (readDir modulesDir));
+        map (mod: "${modulesDir}/${mod}") (attrNames (readDir modulesDir));
     };
 
   nixConfig = {
