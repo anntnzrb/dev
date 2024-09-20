@@ -8,7 +8,7 @@
     treefmt.config = {
       projectRootFile = "flake.nix";
       programs = {
-        nixpkgs-fmt.enable = true;
+        nixfmt.enable = true;
         actionlint.enable = true;
         prettier.enable = true;
 
