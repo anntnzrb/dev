@@ -2,6 +2,9 @@
   inputs,
   ...
 }:
+let
+  devenvRootFile = builtins.readFile inputs.devenv-root.outPath;
+in
 {
   imports = [ inputs.devenv.flakeModule ];
   perSystem =
@@ -14,19 +17,14 @@
     {
       devenv.shells.default = {
         name = "annt-devenv-template-shell";
-
-        devenv.root =
-          let
-            file = builtins.readFile inputs.devenv-root.outPath;
-          in
-          pkgs.lib.mkIf (file != "") file;
+        devenv.root = lib.mkIf (devenvRootFile != "") devenvRootFile;
 
         languages = {
           nix.enable = true;
         };
 
-        packages = [
-          pkgs.just
+        packages = with pkgs; [
+          just
           config.treefmt.build.wrapper
         ];
 
