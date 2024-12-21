@@ -2,6 +2,9 @@
 default:
     @just --list
 
-# format source tree
+# fmt & check
 fmt:
-    treefmt
+    pre-commit run --all-files
+
+# fmt & check
+pre-commit: fmt

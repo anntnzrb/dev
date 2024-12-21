@@ -1,34 +1,24 @@
-{
-  inputs,
-  ...
-}:
-let
-  devenvRootFile = builtins.readFile inputs.devenv-root.outPath;
-in
-{
-  imports = [ inputs.devenv.flakeModule ];
+_: {
   perSystem =
     {
       config,
       pkgs,
-      lib,
       ...
     }:
     {
-      devenv.shells.default = {
-        name = "annt-devenv-template-shell";
-        devenv.root = lib.mkIf (devenvRootFile != "") devenvRootFile;
+      devShells.default = pkgs.mkShell {
+        name = "annt-template-shell";
 
-        languages = {
-          nix.enable = true;
-        };
+        inputsFrom = [
+          config.pre-commit.devShell
+        ];
 
         packages = with pkgs; [
           just
           config.treefmt.build.wrapper
         ];
 
-        enterShell = ''
+        shellHook = ''
           cat <<EOF
 
             🐚✒️ Get started: 'just <recipe>'
