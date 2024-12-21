@@ -181,14 +181,7 @@
       }
     },
     "pre-commit-hooks": {
-      "inputs": {
-        "flake-compat": [],
-        "gitignore": [],
-        "nixpkgs": [
-          "nixpkgs"
-        ],
-        "nixpkgs-stable": []
-      },
+      "flake": false,
       "locked": {
         "lastModified": 1734425854,
         "narHash": "sha256-nzE5UbJ41aPEKf8R2ZFYtLkqPmF7EIUbNEdHMBLg0Ig=",
@@ -248,11 +241,7 @@
       }
     },
     "treefmt-nix": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
+      "flake": false,
       "locked": {
         "lastModified": 1734704479,
         "narHash": "sha256-MMi74+WckoyEWBRcg/oaGRvXC9BVVxDZNRMpL+72wBI=",

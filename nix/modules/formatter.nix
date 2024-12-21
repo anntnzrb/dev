@@ -3,9 +3,7 @@
   ...
 }:
 {
-  imports = [
-    inputs.treefmt-nix.flakeModule
-  ];
+  imports = [ (inputs.treefmt-nix + /flake-module.nix) ];
   perSystem = _: {
     treefmt.config = {
       projectRootFile = ".git/config";
