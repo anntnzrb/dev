@@ -58,8 +58,7 @@
         "flake-parts": "flake-parts",
         "nixpkgs": "nixpkgs",
         "pre-commit-hooks": "pre-commit-hooks",
-        "systems": "systems",
-        "treefmt-nix": "treefmt-nix"
+        "systems": "systems"
       }
     },
     "systems": {
@@ -75,23 +74,6 @@
         "owner": "nix-systems",
         "ref": "main",
         "repo": "default",
-        "type": "github"
-      }
-    },
-    "treefmt-nix": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1734704479,
-        "narHash": "sha256-MMi74+WckoyEWBRcg/oaGRvXC9BVVxDZNRMpL+72wBI=",
-        "owner": "numtide",
-        "repo": "treefmt-nix",
-        "rev": "65712f5af67234dad91a5a4baee986a8b62dbf8f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "ref": "main",
-        "repo": "treefmt-nix",
         "type": "github"
       }
     }

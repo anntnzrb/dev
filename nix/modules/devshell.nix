@@ -15,7 +15,6 @@ _: {
 
         packages = with pkgs; [
           just
-          config.treefmt.build.wrapper
         ];
 
         shellHook = ''

@@ -7,10 +7,6 @@
     flake-parts.url = "github:hercules-ci/flake-parts/main";
     flake-parts.inputs.nixpkgs-lib.follows = "nixpkgs";
 
-    # formatter
-    treefmt-nix.url = "github:numtide/treefmt-nix/main";
-    treefmt-nix.flake = false;
-
     # pre-commit
     pre-commit-hooks.url = "github:cachix/git-hooks.nix";
     pre-commit-hooks.flake = false;
