@@ -3,6 +3,8 @@
   ...
 }:
 {
+  imports = [ (inputs.pre-commit-hooks + /flake-module.nix) ];
+
   perSystem =
     {
       self',

@@ -32,13 +32,8 @@
     treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
 
     # pre-commit
-    pre-commit-hooks = {
-      url = "github:cachix/git-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs-stable.follows = "";
-      inputs.flake-compat.follows = "";
-      inputs.gitignore.follows = "";
-    };
+    pre-commit-hooks.url = "github:cachix/git-hooks.nix";
+    pre-commit-hooks.flake = false;
   };
 
   outputs =
