@@ -6,7 +6,7 @@
   imports = [ (inputs.treefmt-nix + /flake-module.nix) ];
   perSystem = _: {
     treefmt.config = {
-      projectRootFile = ".git/config";
+      projectRootFile = "flake.nix";
       programs = {
         nixfmt.enable = true;
         actionlint.enable = true;
