@@ -13,9 +13,9 @@
     }:
     {
       pre-commit.settings.hooks = {
+        # nix
         flake-checker.enable = true;
-        actionlint.enable = true;
-
+        nixfmt-rfc-style.enable = true;
         deadnix = {
           enable = true;
           settings = {
@@ -40,6 +40,9 @@
               '';
             };
           };
+
+        # GH actions
+        actionlint.enable = true;
       };
 
       checks.default = config.checks.pre-commit;
